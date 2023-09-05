@@ -17,4 +17,6 @@ RUN chgrp -R 0 /spring-boot-openshift-interop-tests && \
     chgrp -R 0 /.kube && \
     chmod -R g=u /.kube
 
+WORKDIR /
+
 CMD ["/bin/bash"]
