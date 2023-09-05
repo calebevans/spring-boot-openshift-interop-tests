@@ -15,6 +15,8 @@ RUN chgrp -R 0 /spring-boot-openshift-interop-tests && \
     chgrp -R 0 /.m2 && \
     chmod -R g=u /.m2 && \
     chgrp -R 0 /.kube && \
-    chmod -R g=u /.kube
+    chmod -R g=u /.kube && \
+    chgrp -R 0 /root && \
+    chmod -R g=u /root
 
 CMD ["/bin/bash"]
