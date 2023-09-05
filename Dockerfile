@@ -7,11 +7,14 @@ COPY . .
 
 # Create required directories
 RUN mkdir /.m2
+RUN mkdir /.kube
 
 # Add required permissions for OpenShift
 RUN chgrp -R 0 /spring-boot-openshift-interop-tests && \
     chmod -R g=u /spring-boot-openshift-interop-tests && \
     chgrp -R 0 /.m2 && \
-    chmod -R g=u /.m2
+    chmod -R g=u /.m2 && \
+    chgrp -R 0 /.kube && \
+    chmod -R g=u /.kube
 
 CMD ["/bin/bash"]
